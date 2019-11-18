@@ -20,8 +20,13 @@ namespace parimpar
         {
             get
             {
-                if (valor%2==1) return "O número " + valor + " é Impar.";
-                else return "O número " + valor + " é Par.";
+                bool primo = true;
+                for (int i = 2; i < valor; i++)
+                {
+                    if (valor % i == 0) primo = false;
+                }
+                if (primo) return "O número " + valor + "é Primo.";
+                else return "O número " + valor + " não é primo.";
             }
         }
 
